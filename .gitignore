@@ -1,0 +1,7 @@
+*.log
+*.bak
+*.~
+
+obj/
+bin/
+ioSearch.py
