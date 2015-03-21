@@ -11,7 +11,7 @@ class ofApp : public ofBaseApp{
 		void setup();
 		void update();
 		void draw();
-        void setFold(float x, float y);
+        void setFold(float x, float y, int currentDraw);
         ofVec2f recursiveFold(ofVec2f v, int r);
 		
 		void keyPressed(int key);

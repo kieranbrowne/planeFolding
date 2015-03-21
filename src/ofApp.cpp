@@ -1,7 +1,7 @@
 #include "ofApp.h"
 
 ofApp::ofApp(float a, float b){
-    step = 6.0 / (1.5*ofGetWidth());
+    step = 6.0 / (0.1*ofGetWidth());
     pos = -M_PI;
     numFolds = floor(b*3.999);
     width = ofGetWidth();
@@ -23,7 +23,12 @@ void ofApp::update(){}
 void ofApp::draw(){
     ofBeginShape();
     for(int f = 0; f < 1; f++) {
-        for(float i=-M_PI;i<=M_PI;i+=step) setFold(i,pos);         
+        bool first = true;
+        int currentDraw;
+        for(float i=-M_PI;i<=M_PI;i+=step) {
+            if(first) {currentDraw = 0; first = false;} else {currentDraw = 1;}
+            setFold(i,pos,currentDraw);         
+        }
         pos += step;
     }
     ofEndShape();
@@ -34,11 +39,11 @@ void ofApp::draw(){
 }
 
 //--------------------------------------------------------------
-void ofApp::setFold(float x, float y){
+void ofApp::setFold(float x, float y, int currentDraw){
     ofVec2f v;
     v.set(x,y);
     v = recursiveFold(v,0);
-    fold.draw(v);
+    fold.draw(v,currentDraw);
 }
 
 //--------------------------------------------------------------

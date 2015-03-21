@@ -7,7 +7,7 @@
 class Folds
 {
     public:
-        void draw(ofVec2f v);
+        void draw(ofVec2f v, int currentDraw);
         ofVec2f getFoldByNum(int num, ofVec2f v);
         
         //folds

@@ -8,12 +8,23 @@ Folds::Folds()
 }
 
 // -------------------------------
-void Folds::draw(ofVec2f v)
+void Folds::draw(ofVec2f v, int currentDraw)
 {
     // +/-pi --> screen values
-    float i = ofMap(v.x, -M_PI, M_PI, 0+b, w-b);
-    float j = ofMap(v.y, -M_PI, M_PI, 0+b, h-b);
+    float i = ofMap(v.x, -M_PI, M_PI, 0+b, w-b, true);
+    float j = ofMap(v.y, -M_PI, M_PI, 0+b, h-b, true);
     ofVertex(i,j);
+
+    float i2 = ofMap(v.x, -M_PI, M_PI, 66, 86, true);
+    float j2 = ofMap(v.y, -M_PI, M_PI, 55, 75, true);
+
+    // write machine data
+    ofstream file;
+    file.open("data", ios::out | ios::app);
+    file << ofToString(i2,2) << " "
+         << ofToString(j2,2) << " "
+         << ofToString(currentDraw) << endl;
+    file.close();
 }
 
 // -------------------------------
