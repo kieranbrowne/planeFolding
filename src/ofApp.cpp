@@ -11,6 +11,7 @@ ofApp::ofApp(float a, float b){
 void ofApp::setup(){
     ofBackground(255,255,255);  ofSetBackgroundAuto(false);
     ofSetColor(50,50,50,10);    ofNoFill();
+    remove("data");
     for(int i=0;i<=numFolds;i++) {
         folds[i] = floor(ofRandom(4.99)); //chooses fold type
     }
