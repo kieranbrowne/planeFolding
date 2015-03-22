@@ -15,8 +15,8 @@ void Folds::draw(ofVec2f v, int currentDraw)
     float j = ofMap(v.y, -M_PI, M_PI, 0+b, h-b, true);
     ofVertex(i,j);
 
-    float i2 = ofMap(v.x, -M_PI, M_PI, 66, 86, true);
-    float j2 = ofMap(v.y, -M_PI, M_PI, 55, 75, true);
+    float i2 = ofMap(v.x, -M_PI, M_PI, 55, 97, true);
+    float j2 = ofMap(v.y, -M_PI, M_PI, 65, 107, true);
 
     // write machine data
     ofstream file;
