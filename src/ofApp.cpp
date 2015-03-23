@@ -49,10 +49,10 @@ void ofApp::setFold(float x, float y, int currentDraw){
 
 //--------------------------------------------------------------
 ofVec2f ofApp::recursiveFold(ofVec2f v, int r){
-    if (r < numFolds) {
-        ofVec2f newv = fold.getFoldByNum(folds[r],v);
-        recursiveFold(newv, r+1);
-    } else return v;
+    if(r < numFolds) {
+        v = fold.getFoldByNum(folds[r],recursiveFold(v,r+1));
+    }
+    return v;
 }
 
 //--------------------------------------------------------------
