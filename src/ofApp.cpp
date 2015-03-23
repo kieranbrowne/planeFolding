@@ -10,7 +10,7 @@ ofApp::ofApp(float a, float b){
 //--------------------------------------------------------------
 void ofApp::setup(){
     ofBackground(255,255,255);  ofSetBackgroundAuto(false);
-    ofSetColor(50,50,50,10);    ofNoFill();
+    ofSetColor(50,50,50);    ofNoFill(); 
     remove("data");
     for(int i=0;i<=numFolds;i++) {
         folds[i] = floor(ofRandom(4.99)); //chooses fold type
@@ -52,7 +52,8 @@ ofVec2f ofApp::recursiveFold(ofVec2f v, int r){
     if (r <= numFolds) {
         v = fold.getFoldByNum(folds[r],v);
         recursiveFold(v, r+1);
-    } else return v;
+    } 
+    return v;
 }
 
 //--------------------------------------------------------------
