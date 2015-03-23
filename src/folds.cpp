@@ -30,12 +30,12 @@ void Folds::draw(ofVec2f v, int currentDraw)
 // -------------------------------
 ofVec2f Folds::getFoldByNum(int num, ofVec2f v){
     switch(num){
-        case 0: return sine(v);
-        case 1: return butterfly(v);
-        case 2: return pinch(v);
-        case 3: return bulge(v);
-        case 4: return rosette(v);
-        default: return v;
+        case 0: return sine(v); break;
+        case 1: return butterfly(v); break;
+        case 2: return pinch(v); break;
+        case 3: return bulge(v); break;
+        case 4: return rosette(v); break;
+        default: cout << "ERROR in getFoldByNum" << endl; return v; break;
     }
 }
 

@@ -1,20 +1,20 @@
 #include "ofApp.h"
 
-ofApp::ofApp(float a, float b){
-    step = 6.0 / (0.1*ofGetWidth());
-    pos = -M_PI;
-    numFolds = floor(b*3.999);
-    width = ofGetWidth();
-    height = ofGetHeight();
-}
 //--------------------------------------------------------------
 void ofApp::setup(){
+    step = 6.0 / (0.15*ofGetWidth());
+    pos = -M_PI;
+    numFolds = b;
+    width = ofGetWidth();
+    height = ofGetHeight();
+
     ofBackground(255,255,255);  ofSetBackgroundAuto(false);
     ofSetColor(50,50,50);    ofNoFill(); 
     remove("data");
-    for(int i=0;i<=numFolds;i++) {
+    for(int i=0;i<numFolds;i++) {
         folds[i] = floor(ofRandom(4.99)); //chooses fold type
     }
+    cout << folds[0] << endl;
 }
 
 //--------------------------------------------------------------
@@ -43,17 +43,16 @@ void ofApp::draw(){
 void ofApp::setFold(float x, float y, int currentDraw){
     ofVec2f v;
     v.set(x,y);
-    v = recursiveFold(v,0);
-    fold.draw(v,currentDraw);
+    ofVec2f newv = recursiveFold(v,0);
+    fold.draw(newv,currentDraw);
 }
 
 //--------------------------------------------------------------
 ofVec2f ofApp::recursiveFold(ofVec2f v, int r){
-    if (r <= numFolds) {
-        v = fold.getFoldByNum(folds[r],v);
-        recursiveFold(v, r+1);
-    } 
-    return v;
+    if (r < numFolds) {
+        ofVec2f newv = fold.getFoldByNum(folds[r],v);
+        recursiveFold(newv, r+1);
+    } else return v;
 }
 
 //--------------------------------------------------------------

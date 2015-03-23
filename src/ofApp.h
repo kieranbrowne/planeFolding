@@ -24,10 +24,9 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-        ofApp(float a, float b);
+        float a,b; // args
 
-
-        int folds [4];
+        int folds [9];
         Folds fold;
 
         float step;
