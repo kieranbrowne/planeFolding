@@ -14,7 +14,7 @@ void ofApp::setup(){
     for(int i=0;i<numFolds;i++) {
         folds[i] = floor(ofRandom(4.99)); //chooses fold type
     }
-    cout << folds[0] << endl;
+    folds[numFolds-1] = a;
 }
 
 //--------------------------------------------------------------
