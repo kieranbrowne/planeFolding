@@ -33,6 +33,7 @@ void ofApp::draw(){
         pos += step;
     }
     ofEndShape();
+    ofSaveFrame();
     if(pos > M_PI) { 
         ofSleepMillis(1000);
         ofExit();
