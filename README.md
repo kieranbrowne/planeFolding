@@ -6,7 +6,7 @@ A simple plane folding script in openFrameworks C++.
 To compile: 
     ```make```
 To run:
-    ```./bin/planefolding x y```
+    ```./bin/planeFolding x y```
     where x is the index of the last fold to be applied and y is the number of folds
 
 ###Acknowledgements
