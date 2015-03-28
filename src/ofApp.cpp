@@ -23,17 +23,14 @@ void ofApp::update(){}
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofBeginShape();
-    for(int f = 0; f < 1; f++) {
-        bool first = true;
-        int currentDraw;
-        for(float i=-M_PI;i<=M_PI;i+=step) {
-            if(first) {currentDraw = 0; first = false;} else {currentDraw = 1;}
-            setFold(i,pos,currentDraw);         
-        }
-        pos += step;
+    bool first = true;
+    int currentDraw;
+    for(float i=-M_PI;i<=M_PI;i+=step) {
+        if(first) {currentDraw = 0; first = false;} else {currentDraw = 1;}
+        setFold(i,pos,currentDraw);         
     }
+    pos += step;
     ofEndShape();
-    ofSaveFrame();
     if(pos > M_PI) { 
         ofSleepMillis(1000);
         ofExit();
