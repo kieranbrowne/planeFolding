@@ -1,5 +1,5 @@
 #Plane Folding
-A simple plane folding script in openFrameworks C++.
+Plane folding in openFrameworks C++. The system combines mathematical functions over a 2d plane to produce artistic imagery.
 
 ![alt tag](http://33.media.tumblr.com/c9361778da6fe345a08aa7be8c8b69a8/tumblr_nlnmh6SKEH1r0bfx2o1_400.gif)
 
