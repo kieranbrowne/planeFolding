@@ -16,6 +16,13 @@ class Folds
         ofVec2f pinch(ofVec2f v);
         ofVec2f bulge(ofVec2f v);
         ofVec2f rosette(ofVec2f v);
+        ofVec2f hourglass(ofVec2f v);
+        ofVec2f jupitermission(ofVec2f v);
+        ofVec2f perspective(ofVec2f v);
+        ofVec2f gravity(ofVec2f v);
+        ofVec2f creasel(ofVec2f v);
+        ofVec2f creaser(ofVec2f v);
+        ofVec2f staircase(ofVec2f v);
 
         int w,h,b;
 

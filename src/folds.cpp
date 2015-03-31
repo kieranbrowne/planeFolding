@@ -35,6 +35,13 @@ ofVec2f Folds::getFoldByNum(int num, ofVec2f v){
         case 2: return pinch(v); break;
         case 3: return bulge(v); break;
         case 4: return rosette(v); break;
+        case 5: return hourglass(v); break;
+        case 6: return jupitermission(v); break;
+        case 7: return perspective(v); break;
+        case 8: return gravity(v); break;
+        case 9: return creasel(v); break;
+        case 10: return creaser(v); break;
+        case 11: return staircase(v); break;
         default: cout << "ERROR in getFoldByNum" << endl; return v; break;
     }
 }
@@ -70,6 +77,46 @@ ofVec2f Folds::bulge(ofVec2f v){
     d /= 2;
     d *= 1.41421356237;
     v.set(d*v.x,d*v.y);
+    return v;
+}
+// -------------------------------
+ofVec2f Folds::hourglass(ofVec2f v){
+    v.set(v.x*sin(v.y*0.7),v.y);
+    return v;
+}
+// -------------------------------
+ofVec2f Folds::jupitermission(ofVec2f v){
+    v.set(v.x,v.x*cos(v.y));
+    return v;
+}
+// -------------------------------
+ofVec2f Folds::perspective(ofVec2f v){
+    float newvy = (v.y-v.x*tan(v.y*0.16)-0.8)/1.7;
+    v.set(v.x,newvy);
+    return v;
+}
+// -------------------------------
+ofVec2f Folds::gravity(ofVec2f v){
+    float newvy = (v.y-v.x*tan(v.x*0.18)-1)/1.3;
+    v.set(v.x,newvy);
+    return v;
+}
+// -------------------------------
+ofVec2f Folds::creasel(ofVec2f v){
+    float newvy = (v.y-v.x*floor(v.x*0.18)-1)/1.7;
+    v.set(v.x,newvy);
+    return v;
+}
+// -------------------------------
+ofVec2f Folds::creaser(ofVec2f v){
+    float newvy = (v.y-v.x*ceil(v.x*0.18)-1)/1.7;
+    v.set(v.x,newvy);
+    return v;
+}
+// -------------------------------
+ofVec2f Folds::staircase(ofVec2f v){
+    float newvy = (v.y-round(v.x*2))/4.0;
+    v.set(newvy,v.x);
     return v;
 }
 
