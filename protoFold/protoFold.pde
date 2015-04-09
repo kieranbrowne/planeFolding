@@ -33,12 +33,17 @@ void setFold(float x, float y)
 
 PVector protoFold(PVector v)
 { 
-  v.y -= round(v.x*2);
-  v.y /= 4.0;
-  float nx = v.y;
-  v.y = v.x;
-  v.x = nx;
-  return v;
+  if(max(cos(v.y),sin(v.x))>abs(min(cos(v.y),sin(v.x)))){ 
+    v.y = max(cos(v.y)*PI,sin(v.y)*PI);
+  }else{ 
+    v.y = min(sin(v.y)*PI,cos(v.y)*PI);
+  }
+  if(max(sin(v.y),cos(v.x))>abs(min(sin(v.y),cos(v.x)))){
+    v.x = max(sin(v.x)*PI,cos(v.x)*PI);
+  }else{ 
+    v.x = min(sin(v.x)*PI,cos(v.x)*PI);
+  }
+  return v; 
 }
 
 /* ideas :
