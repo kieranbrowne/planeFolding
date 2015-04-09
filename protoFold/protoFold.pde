@@ -33,16 +33,8 @@ void setFold(float x, float y)
 
 PVector protoFold(PVector v)
 { 
-  if(max(cos(v.y),sin(v.x))>abs(min(cos(v.y),sin(v.x)))){ 
-    v.y = max(cos(v.y)*PI,sin(v.y)*PI);
-  }else{ 
-    v.y = min(sin(v.y)*PI,cos(v.y)*PI);
-  }
-  if(max(sin(v.y),cos(v.x))>abs(min(sin(v.y),cos(v.x)))){
-    v.x = max(sin(v.x)*PI,cos(v.x)*PI);
-  }else{ 
-    v.x = min(sin(v.x)*PI,cos(v.x)*PI);
-  }
+  v.x = cos(v.y+ (atan(v.x)*PI*.2))*PI;
+  v.y = sin(v.y-(cos(v.x*v.y)))*PI;
   return v; 
 }
 
@@ -62,7 +54,12 @@ staircase(v): v.y -= round(v.x*2);
               float nx = v.y;
               v.y = v.x;
               v.x = nx;
-              
+waves(v): v.x = cos(v.y+ (atan(v.x)*PI*.2))*PI;
+          v.y = sin(v.y-(sin(v.x)))*PI;
+waves2(v):   v.x = cos(v.y+ (atan(v.x)*PI*.2))*PI;
+             v.y = sin(v.y-(cos(v.x)))*PI;
+scratches(v): v.x = cos(v.y+ (atan(v.x)*PI*.2))*PI;
+              v.y = sin(v.y-(tan(v.x*2.1)))*PI;
            
 
 */
