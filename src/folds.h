@@ -23,6 +23,7 @@ class Folds
         ofVec2f creasel(ofVec2f v);
         ofVec2f creaser(ofVec2f v);
         ofVec2f staircase(ofVec2f v);
+        ofVec2f waves(ofVec2f v);
 
         int w,h,b;
 

@@ -12,7 +12,7 @@ void ofApp::setup(){
     ofSetColor(50,50,50);    ofNoFill(); 
     remove("data");
     for(int i=0;i<numFolds;i++) {
-        folds[i] = floor(ofRandom(11.99)); //chooses fold type
+        folds[i] = floor(ofRandom(12.99)); //chooses fold type
     }
     folds[numFolds-1] = a;
 }

@@ -42,6 +42,7 @@ ofVec2f Folds::getFoldByNum(int num, ofVec2f v){
         case 9: return creasel(v); break;
         case 10: return creaser(v); break;
         case 11: return staircase(v); break;
+        case 12: return waves(v); break;
         default: cout << "ERROR in getFoldByNum" << endl; return v; break;
     }
 }
@@ -117,6 +118,14 @@ ofVec2f Folds::creaser(ofVec2f v){
 ofVec2f Folds::staircase(ofVec2f v){
     float newvy = (v.y-round(v.x*2))/4.0;
     v.set(newvy,v.x);
+    return v;
+}
+// -------------------------------
+ofVec2f Folds::waves(ofVec2f v){
+    v.set(
+            cos(v.y+(atan(v.x)*M_PI*.2))*M_PI,
+            sin(v.y-(cos(v.x)))*M_PI
+         );
     return v;
 }
 
